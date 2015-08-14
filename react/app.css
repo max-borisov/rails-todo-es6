@@ -1,0 +1,291 @@
+/*
+ *= require normalize
+ *= require main
+ *= require_self
+ */
+body {
+  background-color: #d1cfc0;
+}
+
+.main {
+  border-top: 5px solid #333333;
+}
+
+.header {
+  text-align: center;
+  text-transform: uppercase;
+  color: #333333;
+}
+
+.header h1 {
+  margin: 60px 0 0 0;
+}
+
+.header p {
+  margin: 0;
+}
+
+.content {
+  width: 700px;
+  margin: 60px auto;
+}
+
+article {
+  margin-bottom: 80px;
+}
+
+article .todo-header {
+  border: 1px solid #315587;
+  background: url("images/todo-header-icon.png") 15px 50% no-repeat, #4165a3 url("images/todo-header-bg.png") left top repeat;
+  height: 50px;
+  padding: 0 16px;
+  color: #ffffff;
+  font-size: 16px;
+  position: relative;
+}
+
+article .todo-header:hover {
+  cursor: pointer;
+}
+
+article .todo-header.edit-mode h3, article .todo-header.edit-mode ul {
+  display: none;
+}
+
+article .todo-header.edit-mode input {
+  display: inline;
+}
+
+article .todo-header input {
+  display: none;
+  background-color: transparent;
+  font-weight: normal;
+  margin: 0 0 0 33px;
+  border: none;
+  color: #ffffff;
+  width: 90%;
+  height: 47px;
+  font-size: 18px;
+}
+
+article .todo-header input:focus {
+  outline: none;
+}
+
+article .todo-header h3 {
+  font-weight: normal;
+  padding: 0 0 0 33px;
+  margin: 0;
+  line-height: 50px;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.75);
+}
+
+article .todo-header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  z-index: 999;
+}
+
+article .todo-header ul li {
+  float: left;
+  text-indent: -999px;
+}
+
+article .todo-header ul li .todo-action-edit, article .todo-header ul li .todo-action-remove {
+  background: url("images/todo-header-actions.png");
+  display: block;
+  width: 27px;
+  height: 17px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+article .todo-header ul li .todo-action-remove {
+  width: 26px;
+  background: url("images/todo-header-actions.png") -27px 0;
+}
+
+article .todo-bar {
+  background: -webkit-linear-gradient(top, #dedede, #cccccc);
+  background: -o-linear-gradient(top, #dedede, #cccccc);
+  background: -moz-linear-gradient(top, #dedede, #cccccc);
+  background: linear-gradient(top, #dedede, #cccccc);
+  height: 50px;
+  border: 1px solid #b0b0a2;
+  border-top: none;
+}
+
+article .todo-bar .todo-bar-new {
+  height: 50px;
+  background: url("images/todo-bar-cross.png") no-repeat 13px 50%;
+  padding-left: 50px;
+}
+
+article .todo-bar .todo-bar-new form {
+  margin: 0;
+  padding-top: 7px;
+}
+
+article .todo-bar .todo-bar-new form input {
+  border: none;
+  border-top: 1px solid #6e6e6e;
+  border-left: 1px solid #cfcfcf;
+  width: 520px;
+  height: 29px;
+  color: #999999;
+  padding: 0 0 0 10px;
+  font-size: 14px;
+}
+
+article .todo-bar .todo-bar-new form input:focus {
+  outline: none;
+}
+
+article .todo-bar .todo-bar-new form button {
+  text-shadow: 0 1px rgba(0, 0, 0, 0.75);
+  color: #ffffff;
+  margin-left: -5px;
+  height: 31px;
+  border: 1px solid #447356;
+  background: -webkit-linear-gradient(top, #93c9ac, #508566);
+  background: -o-linear-gradient(top, #93c9ac, #508566);
+  background: -moz-linear-gradient(top, #93c9ac, #508566);
+  background: linear-gradient(top, #93c9ac, #508566);
+  padding: 0 22px;
+  font-size: 14px;
+  border-radius: 0 4px 4px 0;
+}
+
+article .todo-list {
+  border-radius: 0 0 13px 13px;
+  border: 1px solid #aeb0a0;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+article .todo-list table {
+  width: 100%;
+}
+
+article .todo-list table tr {
+  border-bottom: 1px solid #e8ebea;
+}
+
+article .todo-list table tr:hover {
+  background: #fbfcd4;
+  cursor: pointer;
+}
+
+article .todo-list table tr td {
+  padding: 16px 0;
+}
+
+article .todo-list table tr.completed-task p {
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+article .todo-list table tr .todo-list-checkbox {
+  width: 40px;
+}
+
+article .todo-list table tr .todo-list-checkbox input {
+  margin-left: 15px;
+}
+
+article .todo-list table tr .todo-list-divider {
+  width: 5px;
+  border-left: 1px solid #eddadf;
+  border-right: 1px solid #eddadf;
+}
+
+article .todo-list table tr .todo-list-task {
+  border-right: 1px solid #e8ebea;
+  color: #999999;
+  font-size: 14px;
+}
+
+article .todo-list table tr .todo-list-task.edit-mode p {
+  display: none;
+}
+
+article .todo-list table tr .todo-list-task.edit-mode input {
+  border: none;
+  width: 90%;
+  color: #999999;
+  padding: 5px 3px;
+  font-size: 14px;
+  margin: 0 16px;
+}
+
+article .todo-list table tr .todo-list-task.edit-mode input:focus {
+  outline: none;
+}
+
+article .todo-list table tr .todo-list-task p {
+  margin: 0;
+  padding: 5px 16px;
+}
+
+article .todo-list table tr .todo-list-actions {
+  width: 88px;
+  padding: 0 16px;
+}
+
+article .todo-list table tr .todo-list-actions ul {
+  list-style: none;
+  padding: 5px 0 0 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+article .todo-list table tr .todo-list-actions ul li {
+  float: left;
+}
+
+article .todo-list table tr .todo-list-actions ul li .todo-list-task-sort, article .todo-list table tr .todo-list-actions ul li .todo-list-task-edit, article .todo-list table tr .todo-list-actions ul li .todo-list-task-delete {
+  display: block;
+  text-indent: -999px;
+  background: url("images/todo-list-actions.png") no-repeat;
+}
+
+article .todo-list table tr .todo-list-actions ul li .todo-list-task-sort {
+  width: 21px;
+}
+
+article .todo-list table tr .todo-list-actions ul li .todo-list-task-edit {
+  width: 34px;
+  background-position: -21px 0;
+}
+
+article .todo-list table tr .todo-list-actions ul li .todo-list-task-delete {
+  width: 22px;
+  background-position: -55px 0;
+}
+
+.new-todo {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.new-todo input[type="submit"] {
+  width: 211px;
+  height: 46px;
+  line-height: 46px;
+  border-radius: 2px 2px 2px 2px;
+  border: 1px solid #315587;
+  background: url("images/todo-btn-cross.png") 10px 50% no-repeat, #4171b5 url("images/todo-btn-bg.png") left top repeat-x;
+  color: #fff;
+  font-size: 16px;
+  padding: 0;
+  outline: none;
+}
+
+.new-todo input[type="submit"]:active {
+  background-image: none;
+  background-color: #5d80a6;
+}
