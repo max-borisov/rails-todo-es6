@@ -33,6 +33,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# gem 'sprockets-es6'
+# gem "browserify-rails"
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'

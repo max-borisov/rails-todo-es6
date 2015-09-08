@@ -1,0 +1,32 @@
+{
+  "name": "todo-es6",
+  "dependencies": {},
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "description": "Simple ToDo lists ===",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "babelify": "^6.3.0",
+    "browserify": "^10.2.6",
+    "watchify": "^3.4.0"
+  },
+  "scripts": {
+    "build-js": "browserify app/assets/javascripts/src/test.js -t babelify -o app/assets/javascripts/dist/bundle.js -d",
+    "watch-js": "watchify app/assets/javascripts/src/test.js -t babelify -o app/assets/javascripts/dist/bundle.js -vd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/max-borisov/rails-todo-es6.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/max-borisov/rails-todo-es6/issues"
+  },
+  "homepage": "https://github.com/max-borisov/rails-todo-es6#readme"
+}
