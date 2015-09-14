@@ -1,2 +1,0 @@
-var table = $(".content .list article[data-project-id=<%= @project.id %>] .todo-list table tbody");
-$("<%= escape_javascript(render @task) %>").appendTo(table);

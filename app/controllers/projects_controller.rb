@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  protect_from_forgery except: :destroy
   before_action :set_project, only: [:update, :destroy]
 
   def index

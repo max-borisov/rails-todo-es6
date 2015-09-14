@@ -1,6 +1,9 @@
 {
   "name": "todo-es6",
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "jquery-ui": "^1.10.5"
+  },
   "license": "MIT",
   "engines": {
     "node": ">= 0.10"
@@ -17,8 +20,8 @@
     "watchify": "^3.4.0"
   },
   "scripts": {
-    "build-js": "browserify app/assets/javascripts/src/test.js -t babelify -o app/assets/javascripts/dist/bundle.js -d",
-    "watch-js": "watchify app/assets/javascripts/src/test.js -t babelify -o app/assets/javascripts/dist/bundle.js -vd"
+    "build-js": "browserify app/assets/javascripts/src/app.js -t babelify -o app/assets/javascripts/dist/bundle.js -d",
+    "watch-js": "watchify app/assets/javascripts/src/app.js -t babelify -o app/assets/javascripts/dist/bundle.js -vd"
   },
   "repository": {
     "type": "git",
