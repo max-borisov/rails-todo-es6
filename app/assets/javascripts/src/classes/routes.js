@@ -3,6 +3,8 @@ export default class Routes {
 
   constructor() { this._host = 'http://localhost:8585'; }
 
+  projectsCreate(project_id) { return this._host + '/projects'; }
+
   projectsPut(project_id) { return this._host + '/projects/' + project_id; }
 
   projectsDestroy(project_id) { return this._host + '/projects/' + project_id; }

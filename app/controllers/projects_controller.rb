@@ -8,14 +8,17 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.create(title: "Project ##{Project.count + 1}")
+    render partial: @project
   end
 
   def update
     @project.update(project_params)
+    render nothing: true
   end
 
   def destroy
     @project.destroy
+    render nothing: true
   end
 
   private
