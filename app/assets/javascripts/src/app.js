@@ -2,8 +2,6 @@ import $ from 'jquery';
 import Project from './classes/project';
 import Task from './classes/task';
 
-// @todo Fix sortable bug
-
 $(() => {
   var project = new Project();
   project.createProject();

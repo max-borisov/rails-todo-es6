@@ -4,7 +4,7 @@ export default class Routes {
 
   constructor() { this._host = 'https://rails-todo-es6.herokuapp.com/'; }
 
-  projectsCreate(project_id) { return this._host + '/projects'; }
+  projectsCreate() { return this._host + '/projects'; }
 
   projectsPut(project_id) { return this._host + '/projects/' + project_id; }
 

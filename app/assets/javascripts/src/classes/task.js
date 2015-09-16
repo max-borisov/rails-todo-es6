@@ -10,23 +10,21 @@ export default class Task {
   }
 
   manageActionButtons() {
-    $('.todo-list')
-      .on('mouseover', 'tr', (e) => {
-        $(e.currentTarget).find('ul').removeClass('hidden');
-      })
-      .on('mouseout', 'tr', (e) => {
-        $(e.currentTarget).find('ul').addClass('hidden');
-      });
+    $('.list')
+      .on('mouseover', 'article .todo-list tr',
+        (e) => $(e.currentTarget).find('ul').removeClass('hidden'))
+      .on('mouseout', 'article .todo-list tr',
+        (e) => $(e.currentTarget).find('ul').addClass('hidden'));
   }
 
   completeTask() {
-    $('.todo-list table').on('change', 'tr .todo-list-checkbox input', (e) => {
+    $('.list').on('change', 'article .todo-list table tr .todo-list-checkbox input', (e) => {
       this._completeTask($(e.currentTarget));
     });
   }
 
   editTaskDescription() {
-    $('.todo-list').on('click', 'tr .todo-list-task-edit', (e) => {
+    $('.list').on('click', 'article .todo-list tr .todo-list-task-edit', (e) => {
       e.preventDefault();
       let todoListTask = $(e.currentTarget).parents('tr').find('.todo-list-task');
       if(!todoListTask.hasClass('edit-mode')) {
@@ -38,7 +36,7 @@ export default class Task {
   }
 
   taskDescriptionKeypress() {
-    $('.todo-list').on('keypress', 'tr .todo-list-task input', (e) => {
+    $('.list').on('keypress', 'article .todo-list tr .todo-list-task input', (e) => {
       if(e.which == this._ENTER_KEY) {
         e.preventDefault();
         this._cancelTaskEditing($(e.currentTarget));
@@ -47,14 +45,14 @@ export default class Task {
   }
 
   taskDescriptionBlur() {
-    $('.todo-list').on('blur', 'tr .todo-list-task input', (e) => {
+    $('.list').on('blur', 'article .todo-list tr .todo-list-task input', (e) => {
       e.preventDefault();
       this._cancelTaskEditing($(e.currentTarget));
     });
   }
 
   destroyTask() {
-    $('.todo-list').on('click', 'tr .todo-list-task-delete', (e) => {
+    $('.list').on('click', 'article .todo-list tr .todo-list-task-delete', (e) => {
       e.preventDefault();
       if(confirm('Are you sure ?')) {
         let task = $(e.currentTarget).parents('tr');
@@ -149,10 +147,9 @@ export default class Task {
       data: { task: { description: task_description } }
     })
     .done((data) => {
-      article
-        .find('.todo-list table tbody')
-        .append(data);
+      article.find('.todo-list table tbody').append(data);
       button.prev('input').val('');
+      this.sortable();
     });
   }
 }
