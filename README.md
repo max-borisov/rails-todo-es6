@@ -1,10 +1,11 @@
-Simple ToDo lists
+Todo app
 ===
 
 ## Use ES6 instead of CoffeeScript
 
 ## Description
-Simple to-do lists app based on Rails framework. 
+Todo app based on Rails framework.
+
 It's a demo so it does not have a registration section.
 
 ### Functionality
